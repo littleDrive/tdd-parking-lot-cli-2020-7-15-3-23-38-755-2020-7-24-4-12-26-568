@@ -3,11 +3,16 @@ package com.oocl.cultivation;
 import java.util.HashMap;
 
 public class ParkingLot {
+    int capicity = 10;
     HashMap<Ticket, Car> parkingRooms = new HashMap<>();
 
     public Ticket park(Car car) {
-        Ticket ticket = new Ticket();
-        parkingRooms.put(ticket, car);
+        Ticket ticket = null;
+        if (parkingRooms.size() < capicity) {
+            ticket = new Ticket();
+            parkingRooms.put(ticket, car);
+            capicity = parkingRooms.size();
+        }
         return ticket;
     }
 

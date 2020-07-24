@@ -15,6 +15,9 @@ public class ParkingLot {
         if (ticket == null || !parkingRooms.containsKey(ticket)) {
             return null;
         }
-        return parkingRooms.get(ticket);
+
+        Car car = parkingRooms.get(ticket);
+        parkingRooms.remove(ticket);
+        return car;
     }
 }

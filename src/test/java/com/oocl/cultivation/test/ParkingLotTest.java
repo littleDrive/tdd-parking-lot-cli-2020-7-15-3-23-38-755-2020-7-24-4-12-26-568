@@ -92,4 +92,20 @@ public class ParkingLotTest {
         //then
         Assertions.assertNull(car);
     }
+
+    @Test
+    void should_not_return_car_when_fetch_car_given_a_ticket_which_aleady_be_used() {
+        //given
+        Car car = new Car();
+        ParkingLot parkingLot = new ParkingLot();
+        Ticket newTicket = parkingLot.park(car);
+        Car fetchCarByNewTicket = parkingLot.fetch(newTicket);
+        Ticket oldTicket = newTicket;
+
+        //when
+        Car fetchCarByOldTicket = parkingLot.fetch(oldTicket);
+
+        //then
+        Assertions.assertNull(fetchCarByOldTicket);
+    }
 }

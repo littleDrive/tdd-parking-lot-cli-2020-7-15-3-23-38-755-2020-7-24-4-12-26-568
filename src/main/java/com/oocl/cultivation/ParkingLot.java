@@ -12,6 +12,9 @@ public class ParkingLot {
     }
 
     public Car fetch(Ticket ticket) {
+        if (ticket == null || !parkingRooms.containsKey(ticket)) {
+            return null;
+        }
         return parkingRooms.get(ticket);
     }
 }

@@ -108,4 +108,20 @@ public class ParkingLotTest {
         //then
         Assertions.assertNull(fetchCarByOldTicket);
     }
+
+    @Test
+    void should_not_park_car_and_not_return_ticket_when_park_given_parkingRooms_size_big_than_10() {
+        //given
+        Car car = new Car();
+        ParkingLot parkingLot = new ParkingLot();
+        for (int i = 0; i < 10; i++) {
+            parkingLot.park(new Car());
+        }
+
+        //when
+        Ticket ticket = parkingLot.park(car);
+
+        //then
+        Assertions.assertNull(ticket);
+    }
 }

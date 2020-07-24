@@ -124,4 +124,5 @@ public class ParkingLotTest {
         //then
         Assertions.assertNull(ticket);
     }
+
 }

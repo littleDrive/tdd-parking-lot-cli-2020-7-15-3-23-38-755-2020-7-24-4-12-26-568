@@ -11,7 +11,6 @@ public class ParkingLot {
         if (parkingRooms.size() < capicity) {
             ticket = new Ticket();
             parkingRooms.put(ticket, car);
-            capicity = parkingRooms.size();
         }
         return ticket;
     }

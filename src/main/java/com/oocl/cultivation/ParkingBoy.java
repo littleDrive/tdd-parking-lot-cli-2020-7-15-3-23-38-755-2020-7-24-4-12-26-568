@@ -10,7 +10,7 @@ public class ParkingBoy {
     }
 
     public ParkingBoy() {
-        parkingLot = new ParkingLot();
+        this(new ParkingLot());
     }
 
     public Ticket park(Car car) {

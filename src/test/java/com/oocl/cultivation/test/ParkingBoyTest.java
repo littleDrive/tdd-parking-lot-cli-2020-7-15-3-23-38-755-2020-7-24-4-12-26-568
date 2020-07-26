@@ -37,5 +37,19 @@ public class ParkingBoyTest {
         Assertions.assertEquals("Unrecognized parking ticket.", errorMassage);
     }
 
+    @Test
+    void should_return_Please_rovide_our_arking_icket_when_query_error_massage_given_not_provide_ticket() {
+        //given
+        ParkingBoy parkingBoy = new ParkingBoy();
+        Ticket ticket = new Ticket();
 
+        //when
+        Car car = parkingBoy.fetch(ticket);
+        String errorMassage = parkingBoy.queryErrorMassage();
+
+        //then
+        Assertions.assertEquals("Please provide your parking ticket.", errorMassage);
+
+    }
 }
+

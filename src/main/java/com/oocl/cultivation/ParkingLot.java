@@ -3,9 +3,14 @@ package com.oocl.cultivation;
 import java.util.HashMap;
 
 public class ParkingLot {
+
     int capicity;
     HashMap<Ticket, Car> parkingRooms;
+    int id;
 
+    public int getId() {
+        return id;
+    }
 
     public ParkingLot(int capicityi) {
         this.capicity = capicityi;
@@ -14,6 +19,12 @@ public class ParkingLot {
 
     public ParkingLot() {
         this(10);
+    }
+
+    public ParkingLot(int capicity, int id) {
+        parkingRooms = new HashMap<>();
+        this.capicity = capicity;
+        this.id = id;
     }
 
     public Ticket park(Car car) {

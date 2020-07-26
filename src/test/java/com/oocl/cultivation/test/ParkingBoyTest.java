@@ -7,6 +7,9 @@ import com.oocl.cultivation.Ticket;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParkingBoyTest {
 
     @Test
@@ -64,6 +67,31 @@ public class ParkingBoyTest {
 
         //then
         Assertions.assertEquals( "Not enough position.", errorMassage);
+
+    }
+
+    @Test
+    void should_park_cars_sequentially_when_parking_car_given_car () {
+        //given
+        List parkingLots = new ArrayList<ParkingLot>();
+        parkingLots.add(new ParkingLot(2, 1));
+        parkingLots.add(new ParkingLot(2, 2));
+
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
+        Car car1 = new Car();
+        Car car2 = new Car();
+        Car car3 = new Car();
+
+        //when
+        Ticket ticket1 = parkingBoy.park(car1);
+        Ticket ticket2 = parkingBoy.park(car2);
+        Ticket ticket3 = parkingBoy.park(car3);
+
+        Assertions.assertEquals(1, ticket1.getParkingLotId());
+        Assertions.assertEquals(2, ticket2.getParkingLotId());
+        Assertions.assertEquals(3, ticket3.getParkingLotId());
+
+
 
     }
 }

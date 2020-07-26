@@ -30,7 +30,7 @@ public class ParkingLot {
     public Ticket park(Car car) {
         Ticket ticket = null;
         if (parkingRooms.size() < capicity) {
-            ticket = new Ticket();
+            ticket = new Ticket(this.id);
             parkingRooms.put(ticket, car);
         }
         return ticket;

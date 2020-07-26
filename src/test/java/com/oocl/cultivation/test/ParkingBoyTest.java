@@ -88,8 +88,8 @@ public class ParkingBoyTest {
         Ticket ticket3 = parkingBoy.park(car3);
 
         Assertions.assertEquals(1, ticket1.getParkingLotId());
-        Assertions.assertEquals(2, ticket2.getParkingLotId());
-        Assertions.assertEquals(3, ticket3.getParkingLotId());
+        Assertions.assertEquals(1, ticket2.getParkingLotId());
+        Assertions.assertEquals(2, ticket3.getParkingLotId());
 
 
 

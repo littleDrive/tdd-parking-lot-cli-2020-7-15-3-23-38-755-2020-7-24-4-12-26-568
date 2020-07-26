@@ -23,11 +23,15 @@ public class ParkingBoy {
     }
 
     public Ticket park(Car car) {
-
-        Ticket ticket = parkingLots.get(0).park(car);
-        if (ticket == null) {
-            errorMassage = "Not enough position.";
+        Ticket ticket = null;
+        for (ParkingLot parkingLot : parkingLots) {
+            if (parkingLot.capicity > parkingLot.parkingRooms.size()) {
+                ticket = parkingLot.park(car);
+                return ticket;
+            }
         }
+
+        errorMassage = "Not enough position.";
         return ticket;
     }
 

@@ -6,4 +6,13 @@ public class ParkingBoy {
         ParkingLot parkingLot = new ParkingLot();
         return parkingLot.park(car);
     }
+
+    public Car fetch(Ticket ticket) {
+        ParkingLot parkingLot = new ParkingLot();
+        return parkingLot.fetch(ticket);
+    }
+
+    public String queryErrorMassage() {
+        return null;
+    }
 }

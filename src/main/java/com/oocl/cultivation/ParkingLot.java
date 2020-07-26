@@ -8,6 +8,14 @@ public class ParkingLot {
     HashMap<Ticket, Car> parkingRooms;
     int id;
 
+    public int getCapicity() {
+        return capicity;
+    }
+
+    public HashMap<Ticket, Car> getParkingRooms() {
+        return parkingRooms;
+    }
+
     public int getId() {
         return id;
     }
@@ -22,8 +30,7 @@ public class ParkingLot {
     }
 
     public ParkingLot(int capicity, int id) {
-        parkingRooms = new HashMap<>();
-        this.capicity = capicity;
+        this(capicity);
         this.id = id;
     }
 

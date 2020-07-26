@@ -36,7 +36,13 @@ public class ParkingBoy {
     }
 
     public Car fetch(Ticket ticket) {
-        Car car = parkingLots.get(0).fetch(ticket);
+        Car car = null;
+        for (ParkingLot parkingLot : parkingLots) {
+            if (parkingLot.getParkingRooms().containsKey(ticket)){
+                car = parkingLot.fetch(ticket);
+                return car;
+            }
+        }
         if (car == null) {
             errorMassage = "Unrecognized parking ticket.";
         }

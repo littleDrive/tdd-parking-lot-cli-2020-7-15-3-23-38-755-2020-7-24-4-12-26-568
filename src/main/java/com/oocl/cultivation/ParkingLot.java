@@ -26,6 +26,6 @@ public class ParkingLot {
     }
 
     public Car fetch() {
-        return new Car();
+        return null;
     }
 }

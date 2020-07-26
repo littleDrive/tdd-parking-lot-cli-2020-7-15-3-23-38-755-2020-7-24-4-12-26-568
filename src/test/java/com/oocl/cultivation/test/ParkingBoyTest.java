@@ -51,5 +51,20 @@ public class ParkingBoyTest {
         Assertions.assertEquals("Please provide your parking ticket.", errorMassage);
 
     }
+
+    @Test
+    void should_return_Not_enough_position_when_parking_car_given_not_enough_position_parking_lot() {
+        //given
+        ParkingLot parkingLot = new ParkingLot(0);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        Car car = new Car();
+        //when
+        Ticket ticket = parkingBoy.park(car);
+        String errorMassage = parkingBoy.queryErrorMassage();
+
+        //then
+        Assertions.assertEquals( "Not enough position.", errorMassage);
+
+    }
 }
 

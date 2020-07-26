@@ -3,8 +3,17 @@ package com.oocl.cultivation;
 import java.util.HashMap;
 
 public class ParkingLot {
-    int capicity = 10;
+    int capicity;
     HashMap<Ticket, Car> parkingRooms = new HashMap<>();
+
+
+    public ParkingLot(int capicityi) {
+        this.capicity = capicityi;
+    }
+
+    public ParkingLot() {
+        capicity = 10;
+    }
 
     public Ticket park(Car car) {
         Ticket ticket = null;

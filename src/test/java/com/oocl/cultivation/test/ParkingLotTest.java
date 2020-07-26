@@ -125,4 +125,17 @@ public class ParkingLotTest {
         Assertions.assertNull(ticket);
     }
 
+    @Test
+    void shoule_not_return_car_when_fetch_car_given_nothing() {
+        //given
+        Car car =  new Car();
+        ParkingLot parkingLot = new ParkingLot();
+        Ticket ticket = parkingLot.park(car);
+
+        //when
+        Car not_given_ticket_to_fetch_car = parkingLot.fetch();
+
+        //then
+        Assertions.assertNull(not_given_ticket_to_fetch_car);
+    }
 }

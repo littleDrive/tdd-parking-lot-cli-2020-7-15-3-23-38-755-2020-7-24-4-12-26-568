@@ -24,4 +24,8 @@ public class ParkingLot {
         parkingRooms.remove(ticket);
         return car;
     }
+
+    public Car fetch() {
+        return new Car();
+    }
 }

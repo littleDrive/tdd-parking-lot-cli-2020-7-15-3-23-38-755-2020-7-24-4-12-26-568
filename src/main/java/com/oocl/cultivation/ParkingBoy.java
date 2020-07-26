@@ -14,7 +14,12 @@ public class ParkingBoy {
     }
 
     public Ticket park(Car car) {
-        return parkingLot.park(car);
+
+        Ticket ticket =  parkingLot.park(car);
+        if (ticket == null) {
+            errorMassage = "Not enough position.";
+        }
+        return ticket;
     }
 
     public Car fetch(Ticket ticket) {

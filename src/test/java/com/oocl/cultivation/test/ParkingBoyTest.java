@@ -44,7 +44,7 @@ public class ParkingBoyTest {
         Ticket ticket = new Ticket();
 
         //when
-        Car car = parkingBoy.fetch(ticket);
+        Car car = parkingBoy.fetch();
         String errorMassage = parkingBoy.queryErrorMassage();
 
         //then

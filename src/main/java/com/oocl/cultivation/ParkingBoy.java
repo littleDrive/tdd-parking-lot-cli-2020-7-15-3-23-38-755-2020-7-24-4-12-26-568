@@ -2,6 +2,7 @@ package com.oocl.cultivation;
 
 public class ParkingBoy {
 
+    String errorMassage;
 
     public Ticket park(Car car) {
         ParkingLot parkingLot = new ParkingLot();
@@ -10,10 +11,23 @@ public class ParkingBoy {
 
     public Car fetch(Ticket ticket) {
         ParkingLot parkingLot = new ParkingLot();
-        return parkingLot.fetch(ticket);
+        Car car = parkingLot.fetch(ticket);
+        if (car == null) {
+            errorMassage = "Unrecognized parking ticket.";
+        }
+        return car;
+    }
+
+    public Car fetch() {
+        ParkingLot parkingLot = new ParkingLot();
+        Car car = parkingLot.fetch();
+        if (car == null) {
+            errorMassage =  "Please provide your parking ticket.";
+        }
+        return car;
     }
 
     public String queryErrorMassage() {
-        return "Unrecognized parking ticket.";
+        return errorMassage;
     }
 }

@@ -5,8 +5,10 @@ import java.util.List;
 
 public class ParkingBoy {
 
+    private static final String NOT_ENOUGH_POSITION = "Not enough position.";
     String errorMassage;
     List<ParkingLot> parkingLots;
+
 
     public ParkingBoy(List parkingLots) {
         this.parkingLots = parkingLots;
@@ -21,7 +23,7 @@ public class ParkingBoy {
             }
         }
 
-        errorMassage = "Not enough position.";
+        errorMassage = NOT_ENOUGH_POSITION;
         return ticket;
     }
 

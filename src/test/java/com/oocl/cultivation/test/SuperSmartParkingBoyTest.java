@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * @author ozm
  * @date 2020/7/26 - 18:17
@@ -36,6 +38,6 @@ public class SuperSmartParkingBoyTest {
         Ticket ticket = superSmarkParkingBoy.park(car);
 
         //then
-        Assertions.assertEquals(2, ticket.getParkingLotId());
+        assertEquals(2, ticket.getParkingLotId());
     }
 }

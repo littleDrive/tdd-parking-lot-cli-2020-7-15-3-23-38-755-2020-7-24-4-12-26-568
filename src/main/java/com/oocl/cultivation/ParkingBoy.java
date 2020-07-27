@@ -6,6 +6,8 @@ import java.util.List;
 public class ParkingBoy {
 
     private static final String NOT_ENOUGH_POSITION = "Not enough position.";
+    public static final String UNRECOGNIZED_PARKING_TICKET = "Unrecognized parking ticket.";
+    public static final String PLEASE_PROVIDE_YOUR_PARKING_TICKET = "Please provide your parking ticket.";
     String errorMassage;
     List<ParkingLot> parkingLots;
 
@@ -36,13 +38,13 @@ public class ParkingBoy {
             }
         }
         if (car == null) {
-            errorMassage = "Unrecognized parking ticket.";
+            errorMassage = UNRECOGNIZED_PARKING_TICKET;
         }
         return car;
     }
 
     public Car fetch() {
-            errorMassage =  "Please provide your parking ticket.";
+            errorMassage PLEASE_PROVIDE_YOUR_PARKING_TICKET;
             return null;
     }
 

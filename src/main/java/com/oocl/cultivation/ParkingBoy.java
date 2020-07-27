@@ -44,7 +44,7 @@ public class ParkingBoy {
     }
 
     public Car fetch() {
-            errorMassage PLEASE_PROVIDE_YOUR_PARKING_TICKET;
+            errorMassage = PLEASE_PROVIDE_YOUR_PARKING_TICKET;
             return null;
     }
 

@@ -9,6 +9,8 @@ import java.util.List;
 public class SmartParkingBoy extends ParkingBoy {
 
 
+    private static final String NOT_ENOUGH_POSITION = "Not enough position.";
+
     public SmartParkingBoy(List<ParkingLot> parkingLots) {
         super(parkingLots);
     }
@@ -27,10 +29,8 @@ public class SmartParkingBoy extends ParkingBoy {
         }
         if (maxEmptyPosition > 0) {
             return maxEmptyPositionParkingLot.park(car);
-
         }
-
-        errorMassage = "Not enough position.";
+        errorMassage = NOT_ENOUGH_POSITION;
         return ticket;
     }
 }

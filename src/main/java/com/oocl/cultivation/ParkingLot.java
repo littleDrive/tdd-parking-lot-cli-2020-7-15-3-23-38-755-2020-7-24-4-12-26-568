@@ -5,7 +5,6 @@ import java.util.HashMap;
 public class ParkingLot {
 
     int capacity;
-//    Map
     HashMap<Ticket, Car> parkingRooms;
     int id;
 
@@ -15,10 +14,6 @@ public class ParkingLot {
 
     public HashMap<Ticket, Car> getParkingRooms() {
         return parkingRooms;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public ParkingLot(int capacity) {

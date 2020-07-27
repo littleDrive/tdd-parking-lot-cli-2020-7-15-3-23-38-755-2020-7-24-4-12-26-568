@@ -4,7 +4,6 @@ import com.oocl.cultivation.Car;
 import com.oocl.cultivation.ParkingBoy;
 import com.oocl.cultivation.ParkingLot;
 import com.oocl.cultivation.Ticket;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -92,8 +91,6 @@ public class ParkingBoyTest {
         assertEquals(1, ticket1.getParkingLotId());
         assertEquals(1, ticket2.getParkingLotId());
         assertEquals(2, ticket3.getParkingLotId());
-
-
 
     }
 }

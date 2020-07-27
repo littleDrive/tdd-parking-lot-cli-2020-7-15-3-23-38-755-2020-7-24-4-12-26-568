@@ -6,6 +6,8 @@ import com.oocl.cultivation.Ticket;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class ParkingLotTest {
     @Test
@@ -18,7 +20,8 @@ public class ParkingLotTest {
         Ticket ticket = parkingLot.park(car);
 
         //then
-        Assertions.assertNotNull(ticket);
+        assertNotNull(ticket);
+
     }
 
     @Test
@@ -32,7 +35,7 @@ public class ParkingLotTest {
         Car fetch_car = parkingLot.fetch(ticket);
 
         //then
-        Assertions.assertEquals(parking_car, fetch_car);
+        assertEquals(parking_car, fetch_car);
 
     }
 
@@ -53,9 +56,9 @@ public class ParkingLotTest {
 
 
         //then
-        Assertions.assertNotNull(ticket1);
-        Assertions.assertNotNull(ticket2);
-        Assertions.assertNotNull(ticket3);
+        assertNotNull(ticket1);
+        assertNotNull(ticket2);
+        assertNotNull(ticket3);
     }
 
     @Test
@@ -75,9 +78,9 @@ public class ParkingLotTest {
         Car fetch_car3 = parkingLot.fetch(ticket3);
 
         //then
-        Assertions.assertEquals(parking_car1, fetch_car1);
-        Assertions.assertEquals(parking_car2, fetch_car2);
-        Assertions.assertEquals(parking_car3, fetch_car3);
+        assertEquals(parking_car1, fetch_car1);
+        assertEquals(parking_car2, fetch_car2);
+        assertEquals(parking_car3, fetch_car3);
     }
 
     @Test
@@ -90,7 +93,7 @@ public class ParkingLotTest {
         Car car = parkingLot.fetch(wrongTicket);
 
         //then
-        Assertions.assertNull(car);
+        assertNull(car);
     }
 
     @Test
@@ -106,7 +109,7 @@ public class ParkingLotTest {
         Car fetchCarByOldTicket = parkingLot.fetch(oldTicket);
 
         //then
-        Assertions.assertNull(fetchCarByOldTicket);
+        assertNull(fetchCarByOldTicket);
     }
 
     @Test
@@ -122,7 +125,8 @@ public class ParkingLotTest {
         Ticket ticket = parkingLot.park(car);
 
         //then
-        Assertions.assertNull(ticket);
+        //todo
+        assertNull(ticket);
     }
 
     @Test
@@ -136,6 +140,6 @@ public class ParkingLotTest {
         Car not_given_ticket_to_fetch_car = parkingLot.fetch();
 
         //then
-        Assertions.assertNull(not_given_ticket_to_fetch_car);
+        assertNull(not_given_ticket_to_fetch_car);
     }
 }

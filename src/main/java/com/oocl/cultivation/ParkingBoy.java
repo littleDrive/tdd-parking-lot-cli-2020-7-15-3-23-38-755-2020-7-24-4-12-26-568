@@ -8,15 +8,6 @@ public class ParkingBoy {
     String errorMassage;
     List<ParkingLot> parkingLots;
 
-
-    public ParkingBoy() {
-        this(new ParkingLot());
-    }
-    public ParkingBoy(ParkingLot parkingLot) {
-       parkingLots = new ArrayList<>();
-       parkingLots.add(parkingLot);
-    }
-
     public ParkingBoy(List parkingLots) {
         this.parkingLots = parkingLots;
     }

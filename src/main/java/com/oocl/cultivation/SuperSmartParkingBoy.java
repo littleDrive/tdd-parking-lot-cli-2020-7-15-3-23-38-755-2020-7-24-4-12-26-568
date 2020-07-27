@@ -9,7 +9,7 @@ import java.util.List;
 public class SuperSmartParkingBoy extends ParkingBoy {
 
     public SuperSmartParkingBoy(List<ParkingLot> parkingLots) {
-        this.parkingLots = parkingLots;
+        super(parkingLots);
     }
 
     @Override

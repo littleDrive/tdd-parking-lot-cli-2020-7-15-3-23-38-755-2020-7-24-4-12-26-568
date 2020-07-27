@@ -10,7 +10,7 @@ public class SmartParkingBoy extends ParkingBoy {
 
 
     public SmartParkingBoy(List<ParkingLot> parkingLots) {
-        this.parkingLots = parkingLots;
+        super(parkingLots);
     }
 
     @Override

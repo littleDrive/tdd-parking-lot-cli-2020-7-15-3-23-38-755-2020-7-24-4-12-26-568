@@ -16,7 +16,10 @@ public class ParkingBoyTest {
     @Test
     void should_return_ticket_when_parking_car_given_car() {
         //given
-        ParkingBoy parkingBoy = new ParkingBoy();
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLots.add(parkingLot);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
         Car car = new Car();
 
         //when
@@ -30,7 +33,10 @@ public class ParkingBoyTest {
     @Test
     void should_return_Unrecognized_parking_ticket_when_query_error_massage_given_wrong_ticket() {
         //given
-        ParkingBoy parkingBoy = new ParkingBoy();
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLots.add(parkingLot);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
         Ticket ticket = new Ticket();
 
         //when
@@ -44,7 +50,10 @@ public class ParkingBoyTest {
     @Test
     void should_return_Please_rovide_our_arking_icket_when_query_error_massage_given_not_provide_ticket() {
         //given
-        ParkingBoy parkingBoy = new ParkingBoy();
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLots.add(parkingLot);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);;
         Ticket ticket = new Ticket();
 
         //when
@@ -59,8 +68,10 @@ public class ParkingBoyTest {
     @Test
     void should_return_Not_enough_position_when_parking_car_given_not_enough_position_parking_lot() {
         //given
+        List<ParkingLot> parkingLots = new ArrayList<>();
         ParkingLot parkingLot = new ParkingLot(0);
-        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        parkingLots.add(parkingLot);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);;
         Car car = new Car();
         //when
         Ticket ticket = parkingBoy.park(car);

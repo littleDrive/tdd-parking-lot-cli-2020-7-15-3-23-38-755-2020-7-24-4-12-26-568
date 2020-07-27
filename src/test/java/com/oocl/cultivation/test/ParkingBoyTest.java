@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class ParkingBoyTest {
 
     @Test
@@ -22,7 +24,7 @@ public class ParkingBoyTest {
         Ticket ticket = parkingBoy.park(car);
 
         //then
-        Assertions.assertNotNull(ticket);
+        assertNotNull(ticket);
 
     }
 
@@ -37,7 +39,7 @@ public class ParkingBoyTest {
         String errorMassage = parkingBoy.queryErrorMassage();
 
         //then
-        Assertions.assertEquals("Unrecognized parking ticket.", errorMassage);
+        assertEquals("Unrecognized parking ticket.", errorMassage);
     }
 
     @Test
@@ -51,7 +53,7 @@ public class ParkingBoyTest {
         String errorMassage = parkingBoy.queryErrorMassage();
 
         //then
-        Assertions.assertEquals("Please provide your parking ticket.", errorMassage);
+        assertEquals("Please provide your parking ticket.", errorMassage);
 
     }
 
@@ -66,7 +68,7 @@ public class ParkingBoyTest {
         String errorMassage = parkingBoy.queryErrorMassage();
 
         //then
-        Assertions.assertEquals( "Not enough position.", errorMassage);
+        assertEquals( "Not enough position.", errorMassage);
 
     }
 
@@ -87,9 +89,9 @@ public class ParkingBoyTest {
         Ticket ticket2 = parkingBoy.park(car2);
         Ticket ticket3 = parkingBoy.park(car3);
 
-        Assertions.assertEquals(1, ticket1.getParkingLotId());
-        Assertions.assertEquals(1, ticket2.getParkingLotId());
-        Assertions.assertEquals(2, ticket3.getParkingLotId());
+        assertEquals(1, ticket1.getParkingLotId());
+        assertEquals(1, ticket2.getParkingLotId());
+        assertEquals(2, ticket3.getParkingLotId());
 
 
 

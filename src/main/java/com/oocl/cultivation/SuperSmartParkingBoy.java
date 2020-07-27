@@ -18,7 +18,7 @@ public class SuperSmartParkingBoy extends ParkingBoy {
         double largerAvailablePosition = 0;
         ParkingLot largerAvailablePositionParkingLot = parkingLots.get(0);
         for (ParkingLot parkingLot : parkingLots) {
-            double currentParkingLotAvailablePosition = (double) (parkingLot.getCapicity() - parkingLot.parkingRooms.size()) / parkingLot.getCapicity() ;
+            double currentParkingLotAvailablePosition = (double) (parkingLot.getCapacity() - parkingLot.parkingRooms.size()) / parkingLot.getCapacity() ;
             if (largerAvailablePosition < currentParkingLotAvailablePosition) {
                 largerAvailablePosition = currentParkingLotAvailablePosition;
                 largerAvailablePositionParkingLot = parkingLot;

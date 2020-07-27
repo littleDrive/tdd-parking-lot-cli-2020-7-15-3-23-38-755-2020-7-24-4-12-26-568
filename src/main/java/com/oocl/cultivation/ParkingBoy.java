@@ -1,7 +1,6 @@
 package com.oocl.cultivation;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ParkingBoy {
@@ -25,7 +24,7 @@ public class ParkingBoy {
     public Ticket park(Car car) {
         Ticket ticket = null;
         for (ParkingLot parkingLot : parkingLots) {
-            if (parkingLot.capicity > parkingLot.parkingRooms.size()) {
+            if (parkingLot.capacity > parkingLot.parkingRooms.size()) {
                 ticket = parkingLot.park(car);
                 return ticket;
             }

@@ -19,7 +19,7 @@ public class SmartParkingBoy extends ParkingBoy {
         int maxEmptyPosition = 0;
         ParkingLot maxEmptyPositionParkingLot = parkingLots.get(0);
         for (ParkingLot parkingLot : parkingLots) {
-            int currentParkingLotEmptyPosition = parkingLot.getCapicity() - parkingLot.parkingRooms.size();
+            int currentParkingLotEmptyPosition = parkingLot.getCapacity() - parkingLot.parkingRooms.size();
             maxEmptyPosition = maxEmptyPosition > currentParkingLotEmptyPosition ? maxEmptyPosition : currentParkingLotEmptyPosition;
             if (maxEmptyPosition == currentParkingLotEmptyPosition) {
                 maxEmptyPositionParkingLot = parkingLot;

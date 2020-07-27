@@ -4,13 +4,13 @@ import java.util.HashMap;
 
 public class ParkingLot {
 
-    int capicity;
+    int capacity;
 //    Map
     HashMap<Ticket, Car> parkingRooms;
     int id;
 
-    public int getCapicity() {
-        return capicity;
+    public int getCapacity() {
+        return capacity;
     }
 
     public HashMap<Ticket, Car> getParkingRooms() {
@@ -22,7 +22,7 @@ public class ParkingLot {
     }
 
     public ParkingLot(int capacity) {
-        this.capicity = capacity;
+        this.capacity = capacity;
         parkingRooms = new HashMap<>();
     }
 
@@ -30,14 +30,14 @@ public class ParkingLot {
         this(10);
     }
 
-    public ParkingLot(int capicity, int id) {
-        this(capicity);
+    public ParkingLot(int capacity, int id) {
+        this(capacity);
         this.id = id;
     }
 
     public Ticket park(Car car) {
         Ticket ticket = null;
-        if (parkingRooms.size() < capicity) {
+        if (parkingRooms.size() < capacity) {
             ticket = new Ticket(this.id);
             parkingRooms.put(ticket, car);
         }

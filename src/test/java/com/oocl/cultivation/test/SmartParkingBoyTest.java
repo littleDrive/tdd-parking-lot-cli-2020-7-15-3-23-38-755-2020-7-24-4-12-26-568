@@ -1,11 +1,12 @@
 package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.*;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author ozm
@@ -27,7 +28,7 @@ public class SmartParkingBoyTest {
         Ticket ticket = smarkParkingBoy.park(car);
 
         //then
-        Assertions.assertEquals(3, ticket.getParkingLotId());
+        assertEquals(3, ticket.getParkingLotId());
 
     }
 

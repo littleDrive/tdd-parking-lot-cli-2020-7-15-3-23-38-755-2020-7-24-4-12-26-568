@@ -107,7 +107,7 @@ public class ParkingManageTest {
         Ticket ticket = parkingManage.park(parkingManage.getParkingBoys().get(0), parkedCar);
 
         //when
-        Car fetchedCar = parkingManage.fetch(parkingManage.getParkingBoys().get(0), ticket);
+        Car fetchedCar = parkingManage.fetch(parkingManage.getParkingBoys().get(0), new Ticket());
 
         //then
         assertNull(fetchedCar);

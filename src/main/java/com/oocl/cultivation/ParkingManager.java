@@ -5,9 +5,6 @@ import java.util.List;
 
 public class ParkingManager extends ParkingBoy{
 
-    private static final String NOT_ENOUGH_POSITION = "Not enough position.";
-    public static final String UNRECOGNIZED_PARKING_TICKET = "Unrecognized parking ticket.";
-    public static final String PLEASE_PROVIDE_YOUR_PARKING_TICKET = "Please provide your parking ticket.";
 
     List<ParkingBoy> parkingBoys;
 
@@ -19,7 +16,7 @@ public class ParkingManager extends ParkingBoy{
     public Ticket park(ParkingBoy parkingBoy, Car car) {
         Ticket ticket = parkingBoy.park(car);
         if (ticket == null) {
-            errorMassage = NOT_ENOUGH_POSITION;
+            errorMassage = parkingBoy.queryErrorMassage();
         }
         return ticket;
     }
@@ -33,11 +30,10 @@ public class ParkingManager extends ParkingBoy{
     }
 
     public Car fetch(ParkingBoy parkingBoy, Ticket ticket) {
-//        Car car = parkingBoy.fetch(ticket);
-//        if (car == null) {
-//            errorMassage = parkingBoy.queryErrorMassage();
-//        }
-//        return car;
-        return null;
+        Car car = parkingBoy.fetch(ticket);
+        if (car == null) {
+            errorMassage = parkingBoy.queryErrorMassage();
+        }
+        return car;
     }
 }

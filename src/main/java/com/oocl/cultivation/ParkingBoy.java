@@ -11,7 +11,7 @@ public class ParkingBoy {
     List<ParkingLot> parkingLots;
 
 
-    public ParkingBoy(List parkingLots) {
+    public ParkingBoy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
     }
 
@@ -36,9 +36,7 @@ public class ParkingBoy {
                 return car;
             }
         }
-        if (car == null) {
-            errorMassage = UNRECOGNIZED_PARKING_TICKET;
-        }
+        errorMassage = UNRECOGNIZED_PARKING_TICKET;
         return car;
     }
 

@@ -93,4 +93,24 @@ public class ParkingManageTest {
         assertNull(ticket);
         assertEquals("Not enough position.", parkingManage.queryErrorMassage());
     }
+
+    @Test
+    void should_return_error_massage_when_parking_boy_can_not_fetch_car_given_parking_manager() {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        parkingLots.add(parkingLot);
+        ParkingManager parkingManage = new ParkingManager(parkingLots);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
+        parkingManage.addParkingBoye(parkingBoy);
+        Car parkedCar = new Car();
+        Ticket ticket = parkingManage.park(parkingManage.getParkingBoys().get(0), parkedCar);
+
+        //when
+        Car fetchedCar = parkingManage.fetch(parkingManage.getParkingBoys().get(0), ticket);
+
+        //then
+        assertNull(fetchedCar);
+        assertEquals("Unrecognized parking ticket.", parkingManage.queryErrorMassage());
+    }
 }

@@ -31,4 +31,13 @@ public class ParkingManager extends ParkingBoy{
     public List<ParkingBoy> getParkingBoys() {
         return parkingBoys;
     }
+
+    public Car fetch(ParkingBoy parkingBoy, Ticket ticket) {
+//        Car car = parkingBoy.fetch(ticket);
+//        if (car == null) {
+//            errorMassage = parkingBoy.queryErrorMassage();
+//        }
+//        return car;
+        return null;
+    }
 }

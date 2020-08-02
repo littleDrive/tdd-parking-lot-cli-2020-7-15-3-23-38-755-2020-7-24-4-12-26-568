@@ -8,10 +8,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * @author ozm
- * @date 2020/7/26 - 18:17
- */
 public class SuperSmartParkingBoyTest {
     @Test
     void should_park_cars_to_the_parking_lot_which_has_a_larger_available_position_rate_when_park_car() {

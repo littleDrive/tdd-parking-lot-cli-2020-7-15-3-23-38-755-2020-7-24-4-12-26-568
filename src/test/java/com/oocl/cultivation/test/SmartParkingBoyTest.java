@@ -8,10 +8,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * @author ozm
- * @date 2020/7/26 - 16:35
- */
 public class SmartParkingBoyTest {
     @Test
     void should_park_cars_to_the_parking_lot_which_contains_more_empty_positions_when_parking_cars() {

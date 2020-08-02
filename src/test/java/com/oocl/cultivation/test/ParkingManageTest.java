@@ -30,9 +30,11 @@ public class ParkingManageTest {
     @Test
     void should_return_ticket_when_parking_car_given_parking_boy() {
         //given
+        ParkingLot parkingLot = new ParkingLot();
         List<ParkingLot> parkingLots = new ArrayList<>();
+        parkingLots.add(parkingLot);
         ParkingManager parkingManage = new ParkingManager(parkingLots);
-        ParkingBoy parkingBoy = new ParkingBoy();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
         parkingManage.addParkingBoye(parkingBoy);
 
         //when

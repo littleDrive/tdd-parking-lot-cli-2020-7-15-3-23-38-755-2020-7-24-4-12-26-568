@@ -13,7 +13,7 @@ public class ParkingManager extends ParkingBoy{
     }
 
     public Ticket park(ParkingBoy parkingBoy, Car car) {
-        return parkingBoy.park(car);
+        return null;
     }
 
     public void addParkingBoye(ParkingBoy parkingBoy) {

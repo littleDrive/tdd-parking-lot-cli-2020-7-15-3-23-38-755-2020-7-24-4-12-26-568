@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ParkingManageTest {
 
@@ -24,5 +25,20 @@ public class ParkingManageTest {
         //then
         assertEquals(1 , parkingManage.getParkingBoys().size());
 
+    }
+
+    @Test
+    void should_return_ticket_when_parking_car_given_parking_boy() {
+        //given
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        ParkingManager parkingManage = new ParkingManager(parkingLots);
+        ParkingBoy parkingBoy = new ParkingBoy();
+        parkingManage.addParkingBoye(parkingBoy);
+
+        //when
+        Ticket ticket = parkingManage.park(parkingManage.getParkingBoys().get(0), new Car());
+
+        //then
+        assertNotNull(ticket);
     }
 }

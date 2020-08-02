@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ParkingManageTest {
 
@@ -74,5 +73,24 @@ public class ParkingManageTest {
         Car fetchCar = parkingManager.fetch(ticket);
         //then
         assertEquals(parkCar, fetchCar);
+    }
+
+    @Test
+    void should_return_error_massage_when_parking_boy_can_not_parking_car_given_parking_manager() {
+        //given
+        ParkingLot parkingLot = new ParkingLot(1, 1);
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        parkingLots.add(parkingLot);
+        ParkingManager parkingManage = new ParkingManager(parkingLots);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
+        parkingManage.addParkingBoye(parkingBoy);
+        parkingManage.park(parkingManage.getParkingBoys().get(0), new Car());
+
+        //when
+        Ticket ticket = parkingManage.park(parkingManage.getParkingBoys().get(0), new Car());
+
+        //then
+        assertNull(ticket);
+        assertEquals("Not enough position.", parkingManage.queryErrorMassage());
     }
 }

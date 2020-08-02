@@ -10,6 +10,9 @@ public class ParkingBoy {
     String errorMassage;
     List<ParkingLot> parkingLots;
 
+    public ParkingBoy() {
+
+    }
 
     public ParkingBoy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;

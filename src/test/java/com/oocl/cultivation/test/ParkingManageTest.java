@@ -1,6 +1,7 @@
 package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.*;
+import javafx.beans.binding.When;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -39,6 +40,21 @@ public class ParkingManageTest {
 
         //when
         Ticket ticket = parkingManage.park(parkingManage.getParkingBoys().get(0), new Car());
+
+        //then
+        assertNotNull(ticket);
+    }
+
+    @Test
+    void should_return_ticket_when_parking_car_given_parking_manager() {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        parkingLots.add(parkingLot);
+        ParkingManager parkingManager = new ParkingManager(parkingLots);
+
+        //when
+        Ticket ticket = parkingManager.park(new Car());
 
         //then
         assertNotNull(ticket);
